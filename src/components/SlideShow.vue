@@ -4,9 +4,11 @@
           <img v-bind:src="currimg" @click="modalThis" :key="currimg" class="animated  fadeInDown">
     </div>
     <div class="thumbs">
-      <div class="thumb" v-for="(img, index) in images" :key="index" @click="setCurrent(index)">
+      <div class="thumb mobile-control left-mobile" @click="toLeft">&#x2039;</div>
+      <div class="thumb thumbnail" v-for="(img, index) in images.slice(0, getNumberOfThumbnails())" :key="index" @click="setCurrent(index)" :class="{'hide-mobile': shouldHideThumbnail(index)}">
         <img v-bind:src="img" >
       </div>
+      <div class=" thumb mobile-control right-mobile" @click="toRight">&#x203A;</div>
     </div>
     <div class="picmod" v-show="showmodal">
       <img v-bind:src="currimg">
@@ -60,6 +62,15 @@ export default {
     toRight: function(){
       this.setCurrent(images.indexOf(this.currimg)+1)
     },
+    isMobileControls: function(index) { // if first or last image and mobile.
+      return (index === 0 || index === images.length - 1) && window.innerWidth <= 600;
+    },
+    shouldHideThumbnail: function(index) { // only show two images on mobile.
+      return window.innerWidth <= 600 && index >= 2;
+    },
+    getNumberOfThumbnails: function() {
+      return window.innerWidth <= 600 ? 2 : 4;
+    }
   },
   computed: function(){
 
@@ -80,7 +91,7 @@ export default {
     width: 100%;
     overflow: hidden;
     max-width: 760px;
-    position:relative;
+    position: relative;
   }
   #slider img {
     max-width: 100%;
@@ -92,7 +103,7 @@ export default {
   .curr-img {
     padding: 14px; 
     margin: 0 10px;
-    border: 1px solid rgb(100, 100, 100);;
+    border: 3px solid rgb(100, 100, 100);;
     border-radius: 10px;
     height: 300px;
     display: flex;
@@ -109,7 +120,7 @@ export default {
     min-width: calc(25% - 20px);
     padding: 14px; 
     margin: 10px;
-    border: 1px solid rgb(100, 100, 100);
+    border: 3px solid rgb(100, 100, 100);
     border-radius: 10px;
     height: 55px;
     cursor: pointer;
@@ -142,28 +153,27 @@ export default {
     cursor: pointer;
   }
 
-  @media(min-width: 450px){
-    .curr-img {
-      height: 415px;
-    }
-    .thumb {
-      height: 105px;
-    }
+  .mobile-control {
+    display: none;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  .thumbnail {
+    min-width: calc(25% - 20px);
   }
 
   .slider-controls {
     display: none;
     justify-content: space-between;
   }
-  @media(min-width: 600px){
-    .slider-controls {
-      display: flex;
-    }  
-  }
+
   .slider-controls div {
     position: absolute;
     top: calc(40% - 20px);
-    border: 1px solid rgb(100, 100, 100);
+    border: 3px solid rgb(100, 100, 100);
     cursor: pointer;
     color: black;
     font-size: 24px;
@@ -181,5 +191,44 @@ export default {
   }
   .slider-controls .right{
     right: 20px;
+  }
+
+  @media(min-width: 450px) {
+    .curr-img {
+      height: 415px;
+    }
+    .thumb {
+      height: 105px;
+    }
+  }
+
+  @media(min-width: 600px){
+    .slider-controls {
+      display: flex;
+    }  
+  }
+
+  /* Desktop */
+  @media only screen and (min-width: 768px) {
+    .slider-controls .left-mobile,
+    .slider-controls .right-mobile{
+      display: none;
+    }
+    .mobile-control {
+      display: none;
+    }
+  }
+
+  /* Mobile */
+  @media only screen and (max-width: 768px) {
+    .slider-controls .left,
+    .slider-controls .right{
+      display: none;
+    }
+    .mobile-control {
+      display: flex;
+      font-size: 30px;
+      align-items: center;
+    }
   }
 </style>
