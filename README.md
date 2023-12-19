@@ -1,5 +1,7 @@
 # miles-acting-portfolio
 
+## Use Netlify CMS
+
 ## Project setup
 ```
 yarn install
