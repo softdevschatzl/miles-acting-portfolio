@@ -41,13 +41,14 @@
     font-weight: normal;
   }
   .header {
-    margin-right: 10vw;
+    margin-top: 37vh;
+    margin-right: 5vw;
   }
   
   .headshot {
     text-align: center;
     padding: 20px;
-    width: 300px;
+    width: 450px;
   }
   
   .headshot img {
@@ -67,10 +68,11 @@
     }
     .header {
       margin-right: 0;
+      margin-top: 0vh;
       margin-bottom: 10vh;
     }
     .headshot {
-      width: 200px;
+      width: 300px;
     }
     .container {
       text-align: center;
