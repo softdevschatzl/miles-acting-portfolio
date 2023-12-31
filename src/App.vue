@@ -47,7 +47,7 @@ export default {
     background-color: #cecece;
     min-height: 83vh;
     /** Box shadow */
-    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.9), 0 10px 30px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.9), 0 10px 30px 0 rgba(0,0,0,0.5) 0 10px 10px -5px rgba(0, 0, 0, 0.5);
   }
 
   /* Desktop */

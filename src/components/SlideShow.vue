@@ -22,12 +22,13 @@
 </template>
 
 <script>
-import Heron from '../assets/heron.jpeg';
-import Banana from '../assets/banana.jpeg';
-import Plant from '../assets/plant.jpeg';
-import Shells from '../assets/shells.jpeg';
+// import Heron from '../assets/heron.jpeg';
+// import Banana from '../assets/banana.jpeg'; sample pictures.
+// import Plant from '../assets/plant.jpeg';
+// import Shells from '../assets/shells.jpeg';
+import Miles from '../assets/miles_mann_picture.png';
 
-var images = [Heron, Banana, Plant, Shells];
+var images = [Miles, Miles, Miles, Miles];
 
 export default {
   data() {

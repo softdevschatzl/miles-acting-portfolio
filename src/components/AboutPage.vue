@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <section id = "about" class="about content-section">
-      <h1>About</h1>
+      <h1>About Me</h1>
       <p>Born and raised in Massachusetts, just outside of Boston, along the Charles River.
       By age 6, I knew all the subway stops on the Green line from Riverside to downtown Boston. And I could
       easily find my way from Park Street Station to my favorite Boston stores (Jordan Marsh and Filenes).
@@ -19,6 +19,27 @@
       school. In the 1990’s I switched from Film to Digital cameras and Video cameras.
       Now its time for me to work in front of the camera.
       </p>
+
+      <div class="socials">
+        <div class="social">
+          <h2>Boston Casting</h2>
+          <a href="www.agencyprotalent.com/milesmann" target="_blank">
+            <img class="social-img" src="../assets/boston-casting-logo.png" alt="Boston Casting Logo">
+          </a>
+        </div>
+        <div class="social">
+          <h2>Backstage</h2>
+          <a href="https://www.backstage.com/u/miles-mann/" target="_blank">
+            <img class="social-img backstage" src="../assets/backstage-logo.svg" alt="Backstage Logo">
+          </a>
+        </div>
+        <div class="social">
+          <h2>IMDb</h2>
+          <a href="https://www.imdb.com/name/nm15411233" target="_blank">
+            <img class="social-img" src="../assets/imdb-logo.png" alt="IMDb Logo">
+          </a>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -40,6 +61,38 @@
     text-align: center;
     margin-bottom: 20px;
     font-size: 18px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+  a {
+    margin-bottom: 40px;
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+  }
+  .social-img {
+    width: 150px;
+    transition: 0.3s ease-in-out;
+  }
+  .backstage {
+    margin-top: 10px;
+  }
+
+  .social-img:hover {
+    transform: scale(1.1);
   }
 
   .about {

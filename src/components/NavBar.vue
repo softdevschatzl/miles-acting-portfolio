@@ -1,8 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="nav-header">
-      <h1>Miles</h1>
-      <h1>Mann</h1>
+      <h1>Miles Mann</h1>
     </div>
     <ul>
       <router-link class="nav-link" to="/" v-slot="{ isActive }">
@@ -112,6 +111,12 @@ h1 {
 
 .nav-link {
   text-decoration: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .space-taker {
+    width: 125px;
+  }
 }
 
 /* Mobile */
