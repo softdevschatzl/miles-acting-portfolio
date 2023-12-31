@@ -57,6 +57,7 @@ h1 {
   text-align: center;
   background-color: #4172a0;
   height: 100px;
+  width: 100vw;
 }
 
 .navbar ul {
@@ -111,12 +112,6 @@ h1 {
 
 .nav-link {
   text-decoration: none;
-}
-
-@media only screen and (min-width: 600px) {
-  .navbar {
-    width: 100vw;
-  }
 }
 
 /* Mobile */

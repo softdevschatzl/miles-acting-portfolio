@@ -68,6 +68,7 @@
     .name-box input {
         height: 30px;
         padding: 10px;
+        width: 200px;
         margin-bottom: 10px;
         /* border-radius: 20px; */
         background-color: #dddddd;
@@ -76,6 +77,7 @@
     .message-box {
         margin-top: 20px;
         margin-bottom: 20px;
+        width: 200px;
     }
     .message-box textarea {
         height: 100px;

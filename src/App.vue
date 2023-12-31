@@ -25,6 +25,10 @@ export default {
     padding: 0;
   }
 
+  body {
+    overflow-x: hidden;
+  }
+
   html {
     display: flex;
     justify-content: center;
@@ -48,6 +52,9 @@ export default {
 
   /* Desktop */
   @media only screen and (min-width: 600px) {
+    * {
+      box-sizing: border-box;
+    }
     .container {
       width: 1000px;
     }
@@ -57,6 +64,8 @@ export default {
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      width: 100vw;
+      overflow-x: hidden;
     }
   }
 
