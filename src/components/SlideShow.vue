@@ -27,8 +27,11 @@
 // import Plant from '../assets/plant.jpeg';
 // import Shells from '../assets/shells.jpeg';
 import Miles from '../assets/miles_mann_picture.png';
+import Miles2 from '../assets/Miles-Mann-1.png';
+import Miles3 from '../assets/Miles-Mann-FullBody-.png';
+import Miles4 from '../assets/Miles-Mann-CasualFullBody.png';
 
-var images = [Miles, Miles, Miles, Miles];
+var images = [Miles, Miles2, Miles3, Miles4];
 
 export default {
   data() {
