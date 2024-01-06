@@ -25,7 +25,7 @@
       <h2>More Information</h2>
       <div class="socials">
         <div class="social">
-          <a href="www.agencyprotalent.com/milesmann" target="_blank">
+          <a href="https://digitalcasting.agencyprosoftware.com/talentwebsite/index.php?srchpath=/milesmann" target="_blank">
             <img class="social-img" src="../assets/boston-casting-logo-remaster.png" alt="Boston Casting Logo">
           </a>
         </div>
@@ -58,7 +58,7 @@
 
   p {
     width: 75%;
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
     font-size: 18px;
   }
