@@ -1,23 +1,4 @@
 <template>
-  <div>
-    <Head>
-      <title>Miles Mann</title>
-      <meta name="description" content="Miles Mann's Acting Portfolio" />
-    </Head>
-    <div>Hellow world from your Vue project. Below is Builder Content:</div>
-    <div v-if="canShowContent">
-      <div>
-        page title:
-        {{ (content && content.data && content.data.title) }}
-      </div>
-      <Content 
-        model="page"
-        :content="content"
-        :api-key="apiKey"
-      />
-    </div>
-    <NotFound v-if="pageNotFound" />
-  </div>
   <div class="container">
     <section id = "about" class="about content-section">
       <h1>About Me</h1>
@@ -37,8 +18,7 @@
         Now I am focusing my energies on Acting!
         Since my father was a photographer, I learned how to take-pictures and develop/print my own film in grade
         school. In the 1990’s I switched from Film to Digital cameras and Video cameras.
-        <br>
-        <br>Now its time for me to work in front of the camera.
+        Now its time for me to work in front of the camera.
         </p>
       </div>
 
@@ -65,48 +45,9 @@
 </template>
 
 <script>
-  // OR use these if you are on Vue 3
-  import { fetchOneEntry, Content, isPreviewing } from '@builder.io/sdk-vue/vue3';
-
-// define vue component
-export default {
-  mame: 'AboutPage',
-  data: () => ({
-    // boolean to control showing content
-    canShowContent: false,
-    // content variable to store content from Builder
-    content: null,
-    // use your API key
-    apiKey: process.env.VUE_APP_BUILDER_IO_API_KEY,
-  }),
-  // mounted() lifecycle hook called after component is in the DOM  
-  mounted() {
-    // get page model from space (specified by the Public API Key)
-    // and the URL
-    fetchOneEntry({
-      model: 'page',
-      apiKey: process.env.VUE_APP_BUILDER_IO_API_KEY, // <-- Replace with your Public API Key
-      userAttributes: {
-        urlPath: window.location.pathname,
-      },
-    }).then(res => {
-      // sets content to results of `fetchOneEntry()`
-      this.content = res;
-      // If there's content or if the page is being viewed in the Visual Editor,
-      // set canShowContent to true.
-      this.canShowContent = this.content || isPreviewing();
-    });
-  },
-  methods: {
-    // method to check if page is not found
-    pageNotFound() {
-      return !this.content && !isPreviewing();
-    },
-    helpLinter() {
-      return Content;
-    }
-  },
-}
+  export default {
+    name: 'AboutPage',
+  }
 </script>
 
 <style scoped>
