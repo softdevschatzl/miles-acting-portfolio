@@ -45,6 +45,30 @@
         }
       };
     },
+    methods: {
+      async sendMessage() {
+        try {
+          const response = await fetch("https://formspree.io/f/mrgnblyl", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(this.contact),
+          });
+
+          if (response.ok) {
+            window.alert("Message sent successfully!");
+            this.contact.name = "";
+            this.contact.email = "";
+            this.contact.message = "";
+          } else {
+            console.error("Message failed to send.");
+          }
+        } catch (error) {
+          console.error("An error occurred while sending the message.", error);
+        }
+      }
+    }
   }
 </script>
 
