@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
     "target": "es5",
     "module": "esnext",
     "baseUrl": "./",
@@ -15,5 +17,8 @@
       "dom.iterable",
       "scripthost"
     ]
-  }
+  },
+  "include": [
+    "src/**/*.js"
+  ],
 }
