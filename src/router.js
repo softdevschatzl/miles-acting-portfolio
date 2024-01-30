@@ -4,6 +4,7 @@ import AboutPage from './components/AboutPage.vue'
 import ContactPage from './components/ContactPage.vue'
 import GalleryPage from './components/GalleryPage.vue'
 import ResumePage from './components/ResumePage.vue'
+import VideoPage from './components/VideoPage.vue'
 
 const routes = [
   { path: '/', component: HomePage },
@@ -11,6 +12,7 @@ const routes = [
   { path: '/contact', component: ContactPage },
   { path: '/gallery', component: GalleryPage },
   { path: '/resume', component: ResumePage },
+  { path: '/video', component: VideoPage },
   { path: '/:catchAll(.*)', redirect: '/' },
 ]
 
