@@ -3,6 +3,9 @@ node_modules
 dist/
 .env
 worklog.txt
+.env
+dist
+worklog.txt
 
 # local env files
 .env.local
